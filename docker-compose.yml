@@ -1,0 +1,34 @@
+services:
+  api:
+    build: .
+    ports: ["8000:8000"]
+    environment:
+      DRYER_REDIS_URL: redis://redis:6379/0
+      DRYER_DATABASE_URL: postgresql+psycopg://dryer:dryer@db:5432/dryer
+    depends_on:
+      db:
+        condition: service_healthy
+      redis:
+        condition: service_started
+    restart: unless-stopped
+
+  db:
+    image: postgres:16-alpine
+    environment:
+      POSTGRES_USER: dryer
+      POSTGRES_PASSWORD: dryer
+      POSTGRES_DB: dryer
+    volumes:
+      - dbdata:/var/lib/postgresql/data
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U dryer"]
+      interval: 5s
+      timeout: 3s
+      retries: 5
+
+  redis:
+    image: redis:7-alpine
+    command: ["redis-server", "--maxmemory", "128mb", "--maxmemory-policy", "allkeys-lru"]
+
+volumes:
+  dbdata:
