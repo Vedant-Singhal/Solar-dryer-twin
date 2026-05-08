@@ -1,0 +1,12 @@
+# Default theme (light). Users can toggle Light/Dark/System via the
+# Streamlit hamburger menu → Settings → Theme.
+[theme]
+base                     = "light"
+primaryColor             = "#FF6B35"
+backgroundColor          = "#FFFFFF"
+secondaryBackgroundColor = "#F4F4F4"
+textColor                = "#1A1A2E"
+font                     = "sans serif"
+
+[server]
+headless = true
