@@ -1,5 +1,7 @@
 # Solar Dryer Digital Twin — Production Service
 
+**ARCHIVED (Portfolio snapshot):** This repository contains a completed project kept as a portfolio entry. It is archived and not actively maintained. See `requirements.txt` and `Dockerfile` to run the application locally.
+
 Inference API for the CFD-trained surrogate of the IIT Delhi solar air dryer.
 Given `(heat_flux, porosity, ambient_c, wind_mps)` returns 4 tray temperatures
 and (with `/simulate`) per-tray Lewis drying times + thermal efficiency.
