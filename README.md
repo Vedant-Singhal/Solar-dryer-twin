@@ -3,7 +3,7 @@
 > **A CFD-trained machine-learning surrogate that predicts agricultural-dryer tray temperatures, drying time, and thermal efficiency in under 1 ms — replacing simulations that take hours.**
 
 [![Live Demo](https://img.shields.io/badge/▶-Live%20Demo%20on%20Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://solar-dryer-twin-ggttzp5xh22cbrjswcjnql.streamlit.app/)
-[![Report](https://img.shields.io/badge/📄-Project%20Report%20(PDF)-blue?style=for-the-badge)](Solar_Dryer_Digital_Twin_Project_Report.pdf)
+[![Report](https://img.shields.io/badge/📄-Project%20Report%20(PDF)-blue?style=for-the-badge)]([Solar_Dryer_Digital_Twin_Project_Report.pdf](https://github.com/Vedant-Singhal/Solar-dryer-twin/blob/main/Solar_Dryer.pdf))
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.40-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.5-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](Dockerfile)
@@ -41,7 +41,7 @@ Trained on 81 / tested on 21 design points from a parametric Ansys Fluent sweep 
 | | Link |
 |---|---|
 | **Live dashboard** | <https://solar-dryer-twin-ggttzp5xh22cbrjswcjnql.streamlit.app/> |
-| **Project report (7 pp.)** | [`Solar_Dryer_Digital_Twin_Project_Report.pdf`](Solar_Dryer_Digital_Twin_Project_Report.pdf) |
+| **Project report (7 pp.)** | [`Solar_Dryer_Digital_Twin_Project_Report.pdf`]([Solar_Dryer_Digital_Twin_Project_Report.pdf](https://github.com/Vedant-Singhal/Solar-dryer-twin/blob/main/Solar_Dryer.pdf)) |
 
 The dashboard is a **5-tab Streamlit app**:
 
