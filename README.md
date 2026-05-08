@@ -3,18 +3,10 @@
 > **A CFD-trained machine-learning surrogate that predicts agricultural-dryer tray temperatures, drying time, and thermal efficiency in under 1 ms — replacing simulations that take hours.**
 
 [![Live Demo](https://img.shields.io/badge/▶-Live%20Demo%20on%20Streamlit-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white)](https://solar-dryer-twin-ggttzp5xh22cbrjswcjnql.streamlit.app/)
-[![API](https://img.shields.io/badge/API-FastAPI%20on%20Render-46E3B7?style=for-the-badge&logo=fastapi&logoColor=white)](https://solar-dryer-twin.onrender.com/docs)
 [![Report](https://img.shields.io/badge/📄-Project%20Report%20(PDF)-blue?style=for-the-badge)](Solar_Dryer_Digital_Twin_Project_Report.pdf)
-
-[![Python](https://img.shields.io/badge/Python-3.11-3776AB?logo=python&logoColor=white)](https://www.python.org/)
-[![FastAPI](https://img.shields.io/badge/FastAPI-0.115-009688?logo=fastapi&logoColor=white)](https://fastapi.tiangolo.com/)
 [![Streamlit](https://img.shields.io/badge/Streamlit-1.40-FF4B4B?logo=streamlit&logoColor=white)](https://streamlit.io/)
 [![scikit-learn](https://img.shields.io/badge/scikit--learn-1.5-F7931E?logo=scikitlearn&logoColor=white)](https://scikit-learn.org/)
 [![Docker](https://img.shields.io/badge/Docker-ready-2496ED?logo=docker&logoColor=white)](Dockerfile)
-[![License](https://img.shields.io/badge/License-Academic-lightgrey)](#license)
-
-> **CLL251 — Heat Transfer for Chemical Engineers · IIT Delhi (2026)**
-> *Eric Kapil · Vedant Singhal · Kridant Kumar · Tanisha Sangwan*
 
 ---
 
@@ -31,7 +23,7 @@ High-fidelity CFD answers it correctly but takes hours per case. Reduced-order a
 | 1. Analytical lumped balance + dimensionless analysis | NumPy | Instant | Trend only |
 | 2. 1-D Finite Difference Method (transient absorber plate) | NumPy | < 1 s | ± 12 K vs CFD |
 | 3. 3-D Computational Fluid Dynamics | Ansys Fluent | **~hours** | Ground truth |
-| 4. **Polynomial-regression surrogate** | scikit-learn | **< 1 ms** | **MAE < 0.25 K, R² > 0.98** |
+| 4. **Polynomial-regression surrogate** | scikit-learn | **< 1 ms** | **MAE < 0.25 K** |
 
 ---
 
@@ -40,14 +32,6 @@ High-fidelity CFD answers it correctly but takes hours per case. Reduced-order a
 <p align="center">
   <img src="figures/parity_plot.png" width="540" alt="Parity plot — surrogate vs CFD">
 </p>
-
-| Tray | R² | MAE (K) | Status |
-|---|---|---|---|
-| T₁ (bottom, hottest) | 0.996 | 0.248 | ✅ |
-| T₂ | 0.993 | 0.191 | ✅ |
-| T₃ | 0.987 | 0.154 | ✅ |
-| T₄ (top, coolest) | 0.981 | 0.114 | ✅ |
-
 Trained on 81 / tested on 21 design points from a parametric Ansys Fluent sweep across 300–800 W/m² × 0.50–0.90 porosity (102 design points total).
 
 ---
@@ -57,7 +41,6 @@ Trained on 81 / tested on 21 design points from a parametric Ansys Fluent sweep 
 | | Link |
 |---|---|
 | **Live dashboard** | <https://solar-dryer-twin-ggttzp5xh22cbrjswcjnql.streamlit.app/> |
-| **Live API (Swagger UI)** | <https://solar-dryer-twin.onrender.com/docs> |
 | **Project report (7 pp.)** | [`Solar_Dryer_Digital_Twin_Project_Report.pdf`](Solar_Dryer_Digital_Twin_Project_Report.pdf) |
 
 The dashboard is a **5-tab Streamlit app**:
@@ -215,24 +198,8 @@ Solar_Dryer_Digital_Twin_Project_Report.pdf
 
 ---
 
-## 👥 Author contributions
-
-| Author | Role |
-|---|---|
-| **Eric Kapil** | CFD parametric sweep (Ansys Fluent, 102 design points), ML training pipeline, original draft |
-| **Vedant Singhal** | FastAPI backend, Streamlit frontend, ML training pipeline, deployment |
-| **Kridant Kumar** | Heat-transfer derivations (lumped capacitance, dimensionless groups, Lewis kinetics), review & editing |
-| **Tanisha Sangwan** | FDM solver implementation, validation cross-checks, parity plot, contour visualisations |
 
 ---
-
-## 📄 License
-
-This repository is an academic deliverable for **CLL251 · IIT Delhi (2026)** and is kept as a portfolio snapshot.
-Source code is provided as-is for educational reference. Cite the project report when reusing the modelling stack.
-
----
-
 <p align="center">
   <a href="https://solar-dryer-twin-ggttzp5xh22cbrjswcjnql.streamlit.app/">
     <img src="https://img.shields.io/badge/▶%20Open%20the%20live%20demo-FF4B4B?style=for-the-badge&logo=streamlit&logoColor=white" alt="Live demo">
